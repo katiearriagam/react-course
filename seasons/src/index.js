@@ -17,9 +17,7 @@ class App extends React.Component {
         console.log("My component was just updated. It re-rendered!");
     }
 
-    // render() is required by React
-    render() {
-        // conditional rendering
+    renderContent() {
         if(this.state.errorMessage && !this.state.latitude) {
             return (
                 <div>
@@ -32,8 +30,15 @@ class App extends React.Component {
             return <SeasonDisplay latitude={this.state.latitude} />
         } 
 
+        return <Loader message="Please accept location request."/>
+    }
+
+    // render() is required by React
+    render() {
         return (
-            <Loader message="Please accept location request."/>
+            <div className="border black">
+                {this.renderContent()}
+            </div>
         );
     }
 }
