@@ -3,10 +3,15 @@ import React from 'react';
 class SearchBar extends React.Component {
     state = { term: '' };
 
+    onFormSubmit = (event) => {
+        event.preventDefault(); // prevent form from submitting on enter
+        console.log(this.state.term); // ARROW SYNTAX causes that this is always SearchBar
+    }
+
     render() {
         return (
             <div className="ui segment">
-                <form className="ui form">
+                <form className="ui form" onSubmit={this.onFormSubmit}>
                     <div className="field">
                         <label>Image search</label>
                         <input 
