@@ -5,7 +5,7 @@ class SearchBar extends React.Component {
 
     onFormSubmit = (event) => {
         event.preventDefault(); // prevent form from submitting on enter
-        console.log(this.state.term); // ARROW SYNTAX causes that this is always SearchBar
+        this.props.onSubmit(this.state.term); // ARROW SYNTAX causes that this is always defined
     }
 
     render() {
