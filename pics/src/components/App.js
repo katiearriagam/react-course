@@ -9,7 +9,7 @@ class App extends React.Component {
     async componentDidMount(){
         const response =  await unsplash.get('/search/photos', {
             params: { 
-                query: "random",
+                query: "lavender",
                 per_page: 50
             }
         });
